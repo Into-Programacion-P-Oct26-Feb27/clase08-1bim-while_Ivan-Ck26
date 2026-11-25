@@ -29,22 +29,42 @@ public class Ejemplo05 {
 
         double promedio_final;
         double calificacion;
+        String nombre_apellido;
 
-        System.out.println("Ingrese las notas de los estudiantes de su "
-                + "materia");
+        String cadena_final = "Las notas ingresadas son:\n";
+
+        System.out.println("Ingrese nombre y apellido del estudiante:");
+        nombre_apellido = entrada.nextLine();
+
+        System.out.println("Ingrese las notas del estudiante:");
 
         while (contador <= limite) {
             System.out.printf("Ingrese calificación "
                     + "número %d\n", contador);
             calificacion = entrada.nextDouble();
             suma_total = suma_total + calificacion;
+
+            cadena_final = String.format("%sCalificación %d: %.2f\n",
+                    cadena_final, contador, calificacion);
+
             // contador
             contador = contador + 1;
         }
 
+        cadena_final = String.format("Estudiante: %s\n%s\nLa suma de notas es: %.1f\n",
+                nombre_apellido, cadena_final, suma_total);
+
         promedio_final = suma_total / limite;
 
-        System.out.printf("El promedio final es %f\n", promedio_final);
+        cadena_final = String.format("%sPromedio es: %.2f\n",
+                cadena_final, promedio_final);
 
+        System.out.printf("El promedio final es %f\n", promedio_final);
+        System.out.printf("%s\n", cadena_final);
     }
 }
+/*
+ La cadena estaria guardando el historial de cada nota ingresada y al final 
+le pega la suma y el promedio para presentar un único texto limpio 
+al terminar el programa.
+*/
