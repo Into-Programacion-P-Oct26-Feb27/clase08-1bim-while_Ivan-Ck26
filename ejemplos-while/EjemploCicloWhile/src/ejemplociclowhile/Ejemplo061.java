@@ -30,3 +30,9 @@ public class Ejemplo061 {
         }
     }
 }
+
+/*
+En este ejercicio estamos haciendo un ciclo while controlado por una variable bandera 
+(boolean) y una condición de salida ingresada por el usuario. 
+El bucle se repite mientras banderasea true y termina cuando el usuario escribe -100.
+*/
